@@ -1,16 +1,18 @@
 # Creating Accessible Webpages
 
 ![All About Accessibility](webdev101-a11y.png)
+
 > Sketchnote by [Tomomi Imura](https://twitter.com/girlie_mac)
 
 ## Pre-Lecture Quiz
+
 [Pre-lecture quiz](https://nice-beach-0fe9e9d0f.azurestaticapps.net/quiz/5)
 
 > The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.
 >
 > \- Sir Timothy Berners-Lee, W3C Director and inventor of the World Wide Web
 
-This quote perfectly highlights the importance of creating accessible websites. An application that can't be accessed by all is by definition exclusionary. As web developers we should always have accessibility in mind. By having this focus from the beginning you will be well on your way to ensure everyone can access the pages you create. In this lesson, you'll learn about the tools that can help you ensure that your web assets are accessible and how to build with accessibility in mind. 
+This quote perfectly highlights the importance of creating accessible websites. An application that can't be accessed by all is by definition exclusionary. As web developers we should always have accessibility in mind. By having this focus from the beginning you will be well on your way to ensure everyone can access the pages you create. In this lesson, you'll learn about the tools that can help you ensure that your web assets are accessible and how to build with accessibility in mind.
 
 ## Tools to use
 
@@ -36,7 +38,7 @@ Another type of zoom relies on specialized software to magnify one area of the s
 
 ### Contrast checkers
 
-Colors on web sites need to be carefully chosen to  answer the needs of color-blind users or people who have  difficulty seeing low-contrast colors.
+Colors on web sites need to be carefully chosen to answer the needs of color-blind users or people who have difficulty seeing low-contrast colors.
 
 ✅ Test a web site you enjoy using for color usage with a browser extension such as [WCAG's color checker](https://microsoftedge.microsoft.com/addons/detail/wcag-color-contrast-check/idahaggnlnekelhgplklhfpchbfdmkjp?hl=en-US). What do you learn?
 
@@ -102,7 +104,7 @@ Screen readers also have the ability to read only the hyperlinks on a page, much
 
 ### Good link text
 
-Good link text briefly describes what's on the other side of the link. In the above example talking about little penguins, the link is to the Wikipedia page about the species. The phrase *little penguins* would make for perfect link text as it makes it clear what someone will learn about if they click the link - little penguins.
+Good link text briefly describes what's on the other side of the link. In the above example talking about little penguins, the link is to the Wikipedia page about the species. The phrase _little penguins_ would make for perfect link text as it makes it clear what someone will learn about if they click the link - little penguins.
 
 > The [little penguin](https://en.wikipedia.org/wiki/Little_penguin), sometimes known as the fairy penguin, is the smallest penguin in the world.
 
@@ -121,7 +123,7 @@ Imagine the following page:
 | Widget       | [Description]('#') | [Order]('#') |
 | Super widget | [Description]('#') | [Order]('#') |
 
-In this example, duplicating the text of description and order make sense for someone using a browser. However, someone using a screen reader would only hear the words *description* and *order* repeated without context.
+In this example, duplicating the text of description and order make sense for someone using a browser. However, someone using a screen reader would only hear the words _description_ and _order_ repeated without context.
 
 To support these types of scenarios, HTML supports a set of attributes known as [Accessible Rich Internet Applications (ARIA)](https://developer.mozilla.org/docs/Web/Accessibility/ARIA). These attributes allow you to provide additional information to screen readers.
 
@@ -129,7 +131,7 @@ To support these types of scenarios, HTML supports a set of attributes known as 
 
 You can use `aria-label` to describe the link when the format of the page doesn't allow you to. The description for widget could be set as
 
-``` html
+```html
 <a href="#" aria-label="Widget description">description</a>
 ```
 
@@ -175,47 +177,46 @@ Take this HTML and rewrite it to be as accessible as possible, given the strateg
     <link href='../assets/style.css' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="site-header">
-      <p class="site-title">Turtle Ipsum</p>
-      <p class="site-subtitle">The World's Premier Turtle Fan Club</p>
-    </div>
-    <div class="main-nav">
-      <p class="nav-header">Resources</p>
-      <div class="nav-list">
-        <p class="nav-item nav-item-bull"><a href="https://www.youtube.com/watch?v=CMNry4PE93Y">"I like turtles"</a></p>
-        <p class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtle">Basic Turtle Info</a></p>
-        <p class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtles_(chocolate)">Chocolate Turtles</a></p>
-      </div>
-    </div>
-    <div class="main-content">
-      <div>
-        <p class="page-title">Welcome to Turtle Ipsum. 
-            <a href="">Click here</a> to learn more.
-        </p>
-        <p class="article-text">
-          Turtle ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </p>
-      </div>
-    </div>
-    <div class="footer">
-      <div class="footer-section">
-        <span class="button">Sign up for turtle news</span>
-      </div><div class="footer-section">
-        <p class="nav-header footer-title">
-          Internal Pages
-        </p>
-        <div class="nav-list">
-          <p class="nav-item nav-item-bull"><a href="../">Index</a></p>
-          <p class="nav-item nav-item-bull"><a href="../semantic">Semantic Example</a></p>
-        </div>
-      </div>
+    <header>
+      <h1>Turtle Ipsum</h1>
+      <p>The World's Premier Turtle Fan Club</p>
+    </header>
+    <nav>
+      <ol>
+        <li><a href="https://www.youtube.com/watch?v=CMNry4PE93Y">"I like turtles"</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Turtle">Basic Turtle Info</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Turtles_(chocolate)">Chocolate Turtles</a></li>
+      </ol>
+    </nav>
+    <main>
+      <article>
+        <section>
+          <h2>Welcome to Turtle Ipsum. <a href="">Click what Turtle Ipsum is</a> to learn more.</h2>
+          <p class="article-text">
+            Turtle ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          </p>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <section><button class="button">Sign up for turtle news</button></section>
+      <section>
+        <h2>Internal Pages</h2>
+        <nav>
+          <ol>
+            <li class="nav-item nav-item-bull"><a href="../">Index</a></li>
+            <li class="nav-item nav-item-bull"><a href="../semantic">Semantic Example</a></li>
+          </ol>
+        </nav>
+      </section>
       <p class="footer-copyright">&copy; 2016 Instrument</span>
-    </div>
+    </footer>
   </body>
 </html>
 ```
 
 ## Post-Lecture Quiz
+
 [Post-lecture quiz](https://nice-beach-0fe9e9d0f.azurestaticapps.net/quiz/6)
 
 ## Review & Self Study
@@ -223,7 +224,7 @@ Take this HTML and rewrite it to be as accessible as possible, given the strateg
 Many governments have laws regarding accessibility requirements. Read up on your home country's accessibility laws. What is covered, and what isn't? An example is [this government web site](https://accessibility.blog.gov.uk/).
 
 ## Assignment
- 
+
 [Analyze a non-accessible web site](assignment.md)
 
 Credits: [Turtle Ipsum](https://github.com/Instrument/semantic-html-sample) by Instrument
